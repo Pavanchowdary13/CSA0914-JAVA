@@ -1,0 +1,34 @@
+package project;
+
+import java.util.Scanner;
+
+public class Voewlsandconsonants{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+        System.out.println("Vowels: " + getVowels(word));
+        System.out.println("Consonants: " + getConsonants(word));
+    }
+
+    public static String getVowels(String word) {
+        StringBuilder vowels = new StringBuilder();
+        for (char c : word.toLowerCase().toCharArray()) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowels.append(c);
+            }
+        }
+        return vowels.toString();
+    }
+
+    public static String getConsonants(String word) {
+        StringBuilder consonants = new StringBuilder();
+        for (char c : word.toLowerCase().toCharArray()) {
+            if (c >= 'a' && c <= 'z' && c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u') {
+                consonants.append(c);
+            }
+        }
+        return consonants.toString();
+    }
+}
