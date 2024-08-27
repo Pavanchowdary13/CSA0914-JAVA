@@ -1,0 +1,24 @@
+package project;
+
+import java.util.Scanner;
+
+public class squareroot {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a perfect square number: ");
+        int number = scanner.nextInt();
+        if (isPerfectSquare(number)) {
+            double squareRoot = Math.sqrt(number);
+            System.out.println("Positive square root: " + squareRoot);
+            System.out.println("Negative square root: " + (-squareRoot));
+        } else {
+            System.out.println(number + " is not a perfect square.");
+        }
+        scanner.close();
+    }
+    public static boolean isPerfectSquare(int num) {
+        int sqrt = (int) Math.sqrt(num);
+        return (sqrt * sqrt == num);
+    }
+}
