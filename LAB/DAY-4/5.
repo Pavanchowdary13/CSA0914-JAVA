@@ -1,0 +1,47 @@
+public abstract class StatisticalAnalysis {
+    // Abstract methods
+    public abstract double total();
+    public abstract double average();
+    // Concrete methods
+    public double mean() {
+        return average();
+    }
+    public double mode() {
+        // TO DO: implement mode calculation
+        return 0.0; // placeholder
+    }
+    public double median() {
+        // TO DO: implement median calculation
+        return 0.0; // placeholder
+    }
+}
+// Concrete class
+public class Dataset extends StatisticalAnalysis {
+    private double[] data;
+    public Dataset(double[] data) {
+        this.data = data;
+    }
+    // Implementation of abstract methods
+    @Override
+    public double total() {
+        double sum = 0.0;
+        for (double num : data) {
+            sum += num;
+        }
+        return sum;
+    }
+    @Override
+    public double average() {
+        return total() / data.length;
+    }
+    // Example usage
+    public static void main(String[] args) {
+        double[] data = {1.0, 2.0, 3.0, 4.0, 5.0};
+        Dataset dataset = new Dataset(data);
+        System.out.println("Total: " + dataset.total());
+        System.out.println("Average: " + dataset.average());
+        System.out.println("Mean: " + dataset.mean());
+        System.out.println("Mode: " + dataset.mode());
+        System.out.println("Median: " + dataset.median());
+    }
+}
