@@ -1,0 +1,35 @@
+**Shape.java (Base Class)**
+```java
+public class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+**Circle.java (Derived Class)**
+```java
+public class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+**Rectangle.java (Derived Class)**
+```java
+public class Rectangle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+**Main.java (Test Class)**
+```java
+public class Main {
+    public static void main(String[] args) {
+        Shape shape = new Shape();
+        shape.draw();
+        Shape circle = new Circle();
+        circle.draw();
+        Shape rectangle = new Rectangle();
+        rectangle.draw();
+    }
+}
