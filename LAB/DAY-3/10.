@@ -1,0 +1,14 @@
+public class Thread1 extends Thread {
+    @Override
+    public void run() {
+        try {
+            System.out.println("Thread1 started");
+            Thread.sleep(5000); // sleep for 5 seconds
+            System.out.println("Thread1 woke up");
+            Thread.wait(3000); // wait for 3 seconds
+            System.out.println("Thread1 notified");
+        } catch (InterruptedException e) {
+            System.out.println("Thread1 interrupted");
+        }
+    }
+}
