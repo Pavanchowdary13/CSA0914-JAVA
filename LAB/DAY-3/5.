@@ -1,0 +1,26 @@
+public class NegativeValueException extends Exception {
+    private int value;
+    public NegativeValueException(int value, String message) {
+        super(message);
+        this.value = value;
+    }
+    public int getValue() {
+        return value;
+    }
+}
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        try {
+            enterValue(-5);
+        } catch (NegativeValueException e) {
+            System.out.println("Error: " + e.getMessage());
+            System.out.println("Value: " + e.getValue());
+        }
+    }
+    public static void enterValue(int value) throws NegativeValueException {
+        if (value < 0) {
+            throw new NegativeValueException(value, "Negative values are not allowed.");
+        }
+        System.out.println("Value: " + value);
+    }
+}
