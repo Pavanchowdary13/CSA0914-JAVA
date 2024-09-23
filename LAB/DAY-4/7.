@@ -1,0 +1,38 @@
+public interface Summable {
+    double sum(double[] numbers);
+}
+// Interface 2
+public interface Averagable {
+    double avg(double[] numbers);
+}
+// Interface 3
+public interface PercentageCalculable {
+    double percentage(double total, double part);
+}
+// Class that implements all three interfaces
+public class Calculator implements Summable, Averagable, PercentageCalculable {
+    @Override
+    public double sum(double[] numbers) {
+        double sum = 0.0;
+        for (double num : numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+    @Override
+    public double avg(double[] numbers) {
+        return sum(numbers) / numbers.length;
+    }
+    @Override
+    public double percentage(double total, double part) {
+        return (part / total) * 100.0;
+    }
+    // Example usage
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        double[] numbers = {1.0, 2.0, 3.0, 4.0, 5.0};
+        System.out.println("Sum: " + calculator.sum(numbers));
+        System.out.println("Average: " + calculator.avg(numbers));
+        System.out.println("Percentage: " + calculator.percentage(100.0, 25.0));
+    }
+}
