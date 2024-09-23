@@ -1,0 +1,48 @@
+public interface Tree {
+    void fruits(String fruitName, int quantity, String color);
+    void leaves(int leafCount, String leafType, String leafColor);
+    void flowers(String flowerName, int flowerCount, String flowerColor, String flowerShape);
+}
+// Class 1 extending Tree
+public class Branch1 implements Tree {
+    @Override
+    public void fruits(String fruitName, int quantity, String color) {
+        System.out.println("Branch1 has " + quantity + " " + fruitName + " fruits of " + color + " color.");
+    }
+    @Override
+    public void leaves(int leafCount, String leafType, String leafColor) {
+        System.out.println("Branch1 has " + leafCount + " " + leafType + " leaves of " + leafColor + " color.");
+    }
+    @Override
+    public void flowers(String flowerName, int flowerCount, String flowerColor, String flowerShape) {
+        System.out.println("Branch1 has " + flowerCount + " " + flowerName + " flowers of " + flowerColor + " color and " + flowerShape + " shape.");
+    }
+}
+// Class 2 extending Tree
+public class Branch2 implements Tree {
+    @Override
+    public void fruits(String fruitName, int quantity, String color) {
+        System.out.println("Branch2 has " + quantity + " " + fruitName + " fruits of " + color + " color.");
+    }
+    @Override
+    public void leaves(int leafCount, String leafType, String leafColor) {
+        System.out.println("Branch2 has " + leafCount + " " + leafType + " leaves of " + leafColor + " color.");
+    }
+    @Override
+    public void flowers(String flowerName, int flowerCount, String flowerColor, String flowerShape) {
+        System.out.println("Branch2 has " + flowerCount + " " + flowerName + " flowers of " + flowerColor + " color and " + flowerShape + " shape.");
+    }
+}
+// Example usage
+public class Main {
+    public static void main(String[] args) {
+        Branch1 branch1 = new Branch1();
+        Branch2 branch2 = new Branch2();
+        branch1.fruits("Apples", 5, "Red");
+        branch1.leaves(10, "Oak", "Green");
+        branch1.flowers("Roses", 3, "Pink", "Round");
+        branch2.fruits("Bananas", 7, "Yellow");
+        branch2.leaves(15, "Maple", "Brown");
+        branch2.flowers("Lilies", 2, "White", "Bell-shaped");
+    }
+}
