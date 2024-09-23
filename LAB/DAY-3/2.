@@ -1,0 +1,11 @@
+public class ArrayIndexOutOfBoundsException {
+    public static void main(String[] args) {
+        int[] array = new int[5];
+        try {
+            int element = array[10]; // accessing element at index 10, which is out of bounds
+            System.out.println("Element: " + element);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Array index out of bounds.");
+        }
+    }
+}
