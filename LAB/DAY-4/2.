@@ -1,0 +1,20 @@
+public class Main {
+    public static <T> List<T> rotateRight(List<T> list, int k) {
+        if (list == null || list.isEmpty() || k == 0) {
+            return list;
+        }
+        k = k % list.size(); // handle cases where k is greater than list size
+        List<T> firstPart = list.subList(list.size() - k, list.size());
+        List<T> secondPart = list.subList(0, list.size() - k);
+        List<T> rotatedList = new ArrayList<>();
+        rotatedList.addAll(firstPart);
+        rotatedList.addAll(secondPart);
+        return rotatedList;
+    }
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("a", "b", "c", "d", "e");
+        int k = 2;
+        List<String> rotatedList = rotateRight(list, k);
+        System.out.println(rotatedList);
+    }
+}
