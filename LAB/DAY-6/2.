@@ -1,0 +1,38 @@
+**Person.java (Base Class)**
+```java
+public class Person {
+    private String name;
+    private int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+**Student.java (Derived Class)**
+```java
+public class Student extends Person {
+    private double grade;
+    public Student(String name, int age, double grade) {
+        super(name, age); // Calls the Person constructor
+        this.grade = grade;
+    }
+    public double getGrade() {
+        return grade;
+    }
+}
+**Main.java (Test Class)**
+```java
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("John Doe", 30);
+        System.out.println("Name: " + person.getName() + ", Age: " + person.getAge());
+        Student student = new Student("Jane Doe", 20, 3.5);
+        System.out.println("Name: " + student.getName() + ", Age: " + student.getAge() + ", Grade: " + student.getGrade());
+    }
+}
