@@ -1,0 +1,17 @@
+public class NegativeArgumentException {
+    public static void main(String[] args) {
+        try {
+            calculateArea(-5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: Negative argument passed.");
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("Cause: " + e.getCause());
+        }
+    }
+    public static void calculateArea(int radius) {
+        if (radius < 0) {
+            throw new IllegalArgumentException("Radius cannot be negative.");
+        }
+        System.out.println("Area: " + (Math.PI * radius * radius));
+    }
+}
