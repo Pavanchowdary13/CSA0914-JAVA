@@ -1,0 +1,35 @@
+**Employee.java (Base Class)**
+```java
+public class Employee {
+    private String privateField = "Private field";
+    protected String protectedField = "Protected field";
+    public String publicField = "Public field";
+    public Employee() {}
+    public void printFields() {
+        System.out.println("Private field: " + privateField);
+        System.out.println("Protected field: " + protectedField);
+        System.out.println("Public field: " + publicField);
+    }
+}
+**Manager.java (Derived Class)**
+```java
+public class Manager extends Employee {
+    public Manager() {}
+    public void accessFields() {
+        // Trying to access private field (won't compile)
+        // System.out.println("Private field: " + privateField);
+        System.out.println("Protected field: " + protectedField);
+        System.out.println("Public field: " + publicField);
+    }
+}
+**Main.java (Test Class)**
+```java
+public class Main {
+    public static void main(String[] args) {
+        Employee employee = new Employee();
+        employee.printFields();
+        Manager manager = new Manager();
+        manager.printFields();
+        manager.accessFields();
+    }
+}
