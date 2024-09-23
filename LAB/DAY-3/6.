@@ -1,0 +1,22 @@
+public class InvalidDecimalException extends Exception {
+    public InvalidDecimalException(String message) {
+        super(message);
+    }
+}
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        try {
+            enterDecimal("abc");
+        } catch (InvalidDecimalException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    public static void enterDecimal(String decimal) throws InvalidDecimalException {
+        try {
+            double value = Double.parseDouble(decimal);
+            System.out.println("Decimal: " + value);
+        } catch (NumberFormatException e) {
+            throw new InvalidDecimalException("Invalid decimal number: " + decimal);
+        }
+    }
+}
