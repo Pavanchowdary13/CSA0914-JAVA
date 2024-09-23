@@ -1,0 +1,30 @@
+public class ParsingException {
+    public static void main(String[] args) {
+        String nonNumericString = "abc";
+        try {
+            int num = Integer.parseInt(nonNumericString);
+            System.out.println("Number: " + num);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Parsing a non-numeric string.");
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("Cause: " + e.getCause());
+        }
+    }
+}
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class UserInputException {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        try {
+            int num = scanner.nextInt();
+            System.out.println("Number: " + num);
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Invalid user input.");
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("Cause: " + e.getCause());
+            scanner.next(); // clear invalid input
+        }
+    }
+}
