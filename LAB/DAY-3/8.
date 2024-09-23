@@ -1,0 +1,23 @@
+public class MyClass throws IOException { // throws at class level
+    // ...
+}
+public class MyClass {
+    public void readFile() throws IOException { // throws at method level
+        FileReader fileReader = new FileReader("example.txt");
+        // ...
+    }
+    public void writeFile() throws IOException, FileNotFoundException { // throws multiple exceptions
+        FileWriter fileWriter = new FileWriter("example.txt");
+        // ...
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        try {
+            obj.readFile();
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+}
