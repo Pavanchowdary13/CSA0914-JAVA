@@ -1,0 +1,62 @@
+**Vehicle.java (Base Class)**
+```java
+public class Vehicle {
+    private String color;
+    public Vehicle(String color) {
+        this.color = color;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void honk() {
+        System.out.println("The vehicle honks");
+    }
+}
+**Car.java (Derived Class)**
+```java
+public class Car extends Vehicle {
+    private int doors;
+    public Car(String color, int doors) {
+        super(color); // Calls the Vehicle constructor
+        this.doors = doors;
+    }
+    public int getDoors() {
+        return doors;
+    }
+    public void accelerate() {
+        System.out.println("The car accelerates");
+    }
+}
+**ElectricCar.java (Derived Class)**
+```java
+public class ElectricCar extends Car {
+    private double batteryCapacity;
+    public ElectricCar(String color, int doors, double batteryCapacity) {
+        super(color, doors); // Calls the Car constructor
+        this.batteryCapacity = batteryCapacity;
+    }
+    public double getBatteryCapacity() {
+        return batteryCapacity;
+    }
+    public void charge() {
+        System.out.println("The electric car is charging");
+    }
+}
+**Main.java (Test Class)**
+```java
+public class Main {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle("Red");
+        vehicle.honk();
+        System.out.println("Color: " + vehicle.getColor());
+        Car car = new Car("Blue", 4);
+        car.honk();
+        car.accelerate();
+        System.out.println("Color: " + car.getColor() + ", Doors: " + car.getDoors());
+        ElectricCar electricCar = new ElectricCar("Green", 4, 60.0);
+        electricCar.honk();
+        electricCar.accelerate();
+        electricCar.charge();
+        System.out.println("Color: " + electricCar.getColor() + ", Doors: " + electricCar.getDoors() + ", Battery Capacity: " + electricCar.getBatteryCapacity());
+    }
+}
