@@ -1,0 +1,16 @@
+public class Main {
+    public static int findMissingNumber(List<Integer> numbers) {
+        int n = numbers.size();
+        int expectedSum = n * (n + 1) / 2; // sum of first n natural numbers
+        int actualSum = 0;
+        for (int num : numbers) {
+            actualSum += num;
+        }
+        return expectedSum - actualSum;
+    }
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(0, 1, 2, 4, 5);
+        int missingNumber = findMissingNumber(numbers);
+        System.out.println(missingNumber); // Output: 3
+    }
+}
