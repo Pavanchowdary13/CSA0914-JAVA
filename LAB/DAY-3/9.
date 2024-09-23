@@ -1,0 +1,57 @@
+public class ArmstrongThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("ArmstrongThread started");
+        for (int i = 1; i <= 100; i++) {
+            if (isArmstrong(i)) {
+                System.out.println("Armstrong number: " + i);
+            }
+        }
+        System.out.println("ArmstrongThread finished");
+    }
+    private boolean isArmstrong(int num) {
+        int sum = 0;
+        int temp = num;
+        while (temp != 0) {
+            int digit = temp % 10;
+            sum += Math.pow(digit, 3);
+            temp /= 10;
+        }
+        return sum == num;
+    }
+    @Override
+    public void start() {
+        System.out.println("ArmstrongThread started");
+        super.start();
+    }
+    @Override
+    public void run() {
+        System.out.println("ArmstrongThread running");
+        super.run();
+    }
+    @Override
+    public void interrupt() {
+        System.out.println("ArmstrongThread interrupted");
+        super.interrupt();
+    }
+    @Override
+    public void join() throws InterruptedException {
+        System.out.println("ArmstrongThread joined");
+        super.join();
+    }
+    @Override
+    public void yield() {
+        System.out.println("ArmstrongThread yielded");
+        super.yield();
+    }
+    @Override
+    public void suspend() {
+        System.out.println("ArmstrongThread suspended");
+        super.suspend();
+    }
+    @Override
+    public void resume() {
+        System.out.println("ArmstrongThread resumed");
+        super.resume();
+    }
+}
