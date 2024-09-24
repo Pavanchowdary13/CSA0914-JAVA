@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class BMICalculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter weight in pounds
+        System.out.print("Input weight in pounds: ");
+        double weightInPounds = scanner.nextDouble();
+
+        // Prompt the user to enter height in inches
+        System.out.print("Input height in inches: ");
+        double heightInInches = scanner.nextDouble();
+
+        // Convert weight from pounds to kilograms (1 pound = 0.45359237 kg)
+        double weightInKilograms = weightInPounds * 0.45359237;
+
+        // Convert height from inches to meters (1 inch = 0.0254 meters)
+        double heightInMeters = heightInInches * 0.0254;
+
+        // Calculate BMI
+        double bmi = weightInKilograms / (heightInMeters * heightInMeters);
+
+        // Print the result
+        System.out.printf("Body Mass Index is %.15f%n", bmi);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
