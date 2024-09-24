@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class MinutesToYearsDays {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the number of minutes
+        System.out.print("Input the number of minutes: ");
+        long minutes = scanner.nextLong();
+
+        // Number of minutes in a year
+        long minutesInYear = 60 * 24 * 365;
+        
+        // Calculate the number of years
+        long years = minutes / minutesInYear;
+        
+        // Calculate the remaining minutes
+        long remainingMinutes = minutes % minutesInYear;
+        
+        // Number of minutes in a day
+        long minutesInDay = 60 * 24;
+        
+        // Calculate the number of days
+        long days = remainingMinutes / minutesInDay;
+        
+        // Print the result
+        System.out.printf("%d minutes is approximately %d years and %d days%n", minutes, years, days);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
