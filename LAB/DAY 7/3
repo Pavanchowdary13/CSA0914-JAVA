@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Declare a variable to store the input integer
+        int number;
+
+        // Prompt the user to enter an integer between 0 and 1000
+        System.out.print("Input an integer between 0 and 1000: ");
+        number = scanner.nextInt();
+
+        // Ensure the number is within the valid range
+        if (number < 0 || number > 1000) {
+            System.out.println("The number is not between 0 and 1000.");
+        } else {
+            // Initialize a variable to store the sum of the digits
+            int sum = 0;
+            int originalNumber = number;
+
+            // Loop to extract and add each digit
+            while (number > 0) {
+                int digit = number % 10; // Get the last digit
+                sum += digit;            // Add the digit to the sum
+                number /= 10;            // Remove the last digit
+            }
+
+            // Print the result
+            System.out.printf("The sum of all digits in %d is %d%n", originalNumber, sum);
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
