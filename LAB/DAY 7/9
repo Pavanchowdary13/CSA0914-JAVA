@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class IntegerOperations {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the first integer
+        System.out.print("Input 1st integer: ");
+        int firstInteger = scanner.nextInt();
+
+        // Prompt the user to enter the second integer
+        System.out.print("Input 2nd integer: ");
+        int secondInteger = scanner.nextInt();
+
+        // Calculate the sum of the two integers
+        int sum = firstInteger + secondInteger;
+
+        // Calculate the difference of the two integers
+        int difference = firstInteger - secondInteger;
+
+        // Calculate the product of the two integers
+        int product = firstInteger * secondInteger;
+
+        // Calculate the average of the two integers
+        double average = (firstInteger + secondInteger) / 2.0;
+
+        // Calculate the distance (the absolute difference) of the two integers
+        int distance = Math.abs(difference);
+
+        // Determine the maximum (the largest of the two integers)
+        int max = Math.max(firstInteger, secondInteger);
+
+        // Determine the minimum (the smallest of the two integers)
+        int min = Math.min(firstInteger, secondInteger);
+
+        // Print the results
+        System.out.println("Sum of two integers: " + sum);
+        System.out.println("Difference of two integers: " + difference);
+        System.out.println("Product of two integers: " + product);
+        System.out.printf("Average of two integers: %.2f%n", average);
+        System.out.println("Distance of two integers: " + distance);
+        System.out.println("Max integer: " + max);
+        System.out.println("Min integer: " + min);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
