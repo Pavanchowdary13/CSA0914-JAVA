@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class PowerCalculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a number
+        System.out.print("Enter a number: ");
+        double number = scanner.nextDouble();
+
+        // Calculate the square, cube, and fourth power of the number
+        double square = Math.pow(number, 2);
+        double cube = Math.pow(number, 3);
+        double fourthPower = Math.pow(number, 4);
+
+        // Print the results formatted to two decimal places
+        System.out.printf("Square: %.2f%n", square);
+        System.out.printf("Cube: %.2f%n", cube);
+        System.out.printf("Fourth power: %.2f%n", fourthPower);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
